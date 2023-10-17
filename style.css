@@ -1,32 +1,67 @@
+*{
+    font-family: 'Comfortaa', sans-serif;
+}
+
 body{
     padding: 50px 0;
     display: block;
 }
 
 #wrapper{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     margin: 0 auto;
 }
+
+.btn-container{
+    display: flex;
+    flex-direction: row;
+    width: 512px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    gap: 5px;
+}
+
 .container{
     display: grid;
     justify-content: center;
-    border: 2px solid black;
+    border: 3px solid black;
     flex-wrap: wrap;
     width: 512px;
     height: 512px;
     margin: 0 auto;
+    border-radius: 4px;
 }
 
 .divs{
-    background-color: bisque;
-    border: 1px solid black;
+    background-color: rgb(255, 242, 227);
+    border: 1px solid rgb(34, 34, 34);
+}
+
+.divNoLine{
+    background-color: rgb(255, 242, 227);
 }
 
 .hovering{
     background-color: blue;
 }
 
-.divNum{
-    display: block;
+#divNum, #rgb, #rmvLine, #clear{
+    color: rgb(7, 7, 7);
+    background-color: rgb(238, 238, 238);
+    font-weight: bold;
+    border: 3px solid black;
+    border-radius: 4px;
 }
+
+h1, h3{
+    text-align: center;
+}
+
+.gridLines{
+    border: 0;
+}
+
+

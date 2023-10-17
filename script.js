@@ -1,4 +1,11 @@
 const container = document.querySelector(".container");
+const rmvBtn = document.querySelector("#rmvLine")
+const clear = document.querySelector("#clear")
+const erase = document.querySelector("#erase")
+const rgb = document.querySelector("#rgb");
+
+let rgbMode = false;
+
 
 function createDiv(amount = 32){
     let i = 0;
@@ -20,11 +27,25 @@ addColor(allDivs);
 
 function addColor (allDivs) {
     allDivs.forEach(box => {
-    box.addEventListener("mouseleave", () => {
-        box.classList.add("hovering");
+    box.addEventListener("mouseenter", () => {
+        if(rgbMode){
+            const randomClr = randomColor();
+            box.style.backgroundColor = randomClr;
+        } else {
+            box.style.backgroundColor = "";
+            box.classList.add("hovering");
+        }
     });
 });
 }
+
+function randomColor() {
+    const randomRed = Math.floor(Math.random() * 256);
+    const randomGreen = Math.floor(Math.random() * 256);
+    const randomBlue = Math.floor(Math.random() * 256);
+    return `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+}
+
 
 function removeGrid(){
     const allDivs = document.querySelectorAll(".divs");
@@ -45,3 +66,30 @@ divNum.addEventListener("click", () => {
     const allDivs = document.querySelectorAll(".divs");
     addColor(allDivs);
 });
+
+rmvBtn.addEventListener("click", () => {
+    const allDivs = document.querySelectorAll(".divs, .divNoLine");
+    allDivs.forEach(div => {
+        div.classList.toggle("divNoLine");
+        div.classList.toggle("divs");
+    });
+});
+
+clear.addEventListener("click", () => {
+    const allDivs = document.querySelectorAll(".divs, .divNoLine");
+    allDivs.forEach(div => {
+        div.style.backgroundColor = ""; 
+        div.classList.remove("hovering");
+    });
+});
+
+rgb.addEventListener("click", () => {
+    rgbMode = !rgbMode;
+    if(rgbMode){
+        rgb.style.backgroundColor = "pink";
+    } else{
+        rgb.style.backgroundColor = "";
+    }
+});
+
+
