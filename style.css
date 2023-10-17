@@ -1,15 +1,13 @@
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+    padding: 50px 0;
 }
 
 .container{
     display: flex;
+    justify-content: center;
     border: 1px solid black;
     flex-wrap: wrap;
-    width: 288px;
+    max-width: 960px;
 }
 
 .divs{
@@ -21,4 +19,8 @@ body{
 
 .hovering{
     background-color: blue;
+}
+
+.divNum{
+    display: block;
 }
