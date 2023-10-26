@@ -45,7 +45,7 @@ body{
 }
 
 .hovering{
-    background-color: blue;
+    background-color: rgb(87, 86, 86);
 }
 
 #divNum, #rgb, #rmvLine, #clear{
